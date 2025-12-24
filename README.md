@@ -1,2 +1,3 @@
-# christiangracia.com5.0
-Coming soon, made with vite + react + ts
+# Christiangracia.com5.0 with React + TypeScript + Vite
+
+TODO

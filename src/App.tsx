@@ -1,23 +1,20 @@
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Home } from "./views/Home";
+import { Projects } from "./views/Projects";
+import { About } from "./views/About";
+import { Contact } from "./views/Contact";
 
 function App() {
   return (
-    <div className="main-container">
-      <div className="main-content">
-        <div className="home-container">
-          <span className="name">Christian Gracia</span>
-          <div className="calc-width graph animated-line"></div>
-          <span className="description">
-            I'm a software engineer who likes to build full stack web and mobile
-            apps with React, Node.js, Angular, Java, Python, C#, React Native,
-            Swift, and more.
-          </span>
-        </div>
-        <div className="flex justify-center learn-more-container">
-          <button className="hover-1">Learn More</button>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
