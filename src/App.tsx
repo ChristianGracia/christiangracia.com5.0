@@ -4,17 +4,30 @@ import { Home } from "./views/Home";
 import { Projects } from "./views/Projects";
 import { About } from "./views/About";
 import { Contact } from "./views/Contact";
+import Header from "./components/Header";
+import { SITE_THEME } from "./enums/enums";
 
 function App() {
+  const handleChangeTheme = (isDarkModeEnabled: boolean) => {
+    console.log(isDarkModeEnabled);
+    if (isDarkModeEnabled) {
+      localStorage.setItem(SITE_THEME.DARK, "true");
+    } else {
+      localStorage.removeItem(SITE_THEME.DARK);
+    }
+  };
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Header handleChangeTheme={handleChangeTheme} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
