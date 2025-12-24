@@ -13,3 +13,5 @@ this code is live at https://www.christiangracia.com
 this site is served by my Typescript Node API back-end
 
 link to live api: https://christiangracia-api.herokuapp.com/
+
+# Notes
