@@ -1,4 +1,6 @@
+import { Button } from "@mui/material";
 import { type FC } from "react";
+import { Link } from "react-router";
 
 const Home: FC = () => {
   return (
@@ -13,14 +15,9 @@ const Home: FC = () => {
         </span>
       </div>
       <div className="flex justify-center learn-more-container">
-        <button
-        // (click)="goToAboutPage()"
-        // className="hover-1"
-        // mat-raised-button
-        // color="accent"
-        >
-          Learn More
-        </button>
+        <Button>
+          <Link to="/about">Learn More</Link>
+        </Button>
       </div>
     </>
   );

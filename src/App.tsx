@@ -27,7 +27,7 @@ function App() {
     isPrefSet ? true : prefersDarkMode
   );
 
-  const { mode, setMode } = useColorScheme();
+  const { setMode } = useColorScheme();
   // if (!mode) {
   //   return null;
   // }
@@ -69,12 +69,12 @@ function App() {
 
   return (
     <ThemeProvider theme={appTheme} defaultMode={"dark"}>
-      <Header
-        handleChangeTheme={handleChangeTheme}
-        isDarkModeEnabled={isDarkMode}
-      />
-      <Box sx={{ bgcolor: "primary.main" }}>text</Box>
       <BrowserRouter>
+        <Header
+          handleChangeTheme={handleChangeTheme}
+          isDarkModeEnabled={isDarkMode}
+        />
+        <Box sx={{ bgcolor: "primary.main" }}>text</Box>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
